@@ -5,10 +5,10 @@
 This module extracts data from:
 URL: https://jsonplaceholder.typicode.com
 
-Libraries used: 
+Libraries used:
             - sys
             - reqeusts
-        
+
 Author: Aimable
 Date: October 2024
 """
