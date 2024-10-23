@@ -21,7 +21,7 @@ def get_data(id):
     This function fetches and displays data to the stdout  from an API endpoint
 
     Args:
-        id (str): the id that identifies the user of whose data we are retrieving
+        id (str): the id that identifies the user whose data we are retrieving
 
     Raises:
         -reqeusts.ReqeustException: if there's an errro making the request
@@ -46,19 +46,20 @@ def get_data(id):
         TOTAL_NUMBER_OF_TASKS = len(todos)
         NUMBER_OF_DONE_TASKS = 0
         for item in todos:
-            if item["completed"] == True:
+            if item["completed"] is True:
                 NUMBER_OF_DONE_TASKS += 1
         print(
-            f"Employee {EMPLOYEE_NAME} is done with tasks({NUMBER_OF_DONE_TASKS}/{TOTAL_NUMBER_OF_TASKS}):"
+            f"Employee {EMPLOYEE_NAME} is done with tasks "
+            f"({NUMBER_OF_DONE_TASKS}/{TOTAL_NUMBER_OF_TASKS}):"
         )
         for item in todos:
-            if item["completed"] == True:
+            if item["completed"] is True:
                 print(f"\t {item['title']}")
 
     except requests.RequestException as error:
         print(f"Failed to retrieve data. \nError message:{error}")
     except Exception:
-        print("Request Failed, Be sure the provided id is with the range and try again")
+        print("Request Failed")
 
 
 def main():
