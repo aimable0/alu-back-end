@@ -15,7 +15,6 @@ Date: October 2024
 """
 import json
 import requests
-from rich import print_json
 import sys
 
 
@@ -70,14 +69,12 @@ def main():
     Main function that checks if an argument is passed at the command-line
     and fetches the data and saves it into a json file for the given user ID
     """
-    # if len(sys.argv) > 1:
-    #     id = sys.argv[1]
-    #     get_data(id)
-    # else:
-    #     print("Please provide an id")
-    #     sys.exit(1)
-    id = "2"
-    get_data(id)
+    if len(sys.argv) > 1:
+        id = sys.argv[1]
+        get_data(id)
+    else:
+        print("Please provide an id")
+        sys.exit(1)
 
 
 if __name__ == "__main__":

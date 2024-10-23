@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-0-gather_data_from_an_API.py
+1-export_to_CSV.py
 
 This module extracts data and saves it in csv format file:
 URL: https://jsonplaceholder.typicode.com
@@ -42,7 +42,7 @@ def get_data(id):
         response = requests.get(url2, params=params_1)
         todos = response.json()
 
-        with open(f"{USER_ID}.csv", "w") as file:
+        with open(f"{USER_ID}.csv", "w", newline="") as file:
             for item in todos:
                 USER_ID = item["userId"]
                 TASK_COMPLETED_STATUS = item["completed"]
