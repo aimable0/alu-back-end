@@ -1,6 +1,16 @@
 #!/usr/bin/python3
 """
-    python script that returns TODO list progress for a given employee ID
+0-gather_data_from_an_API".py
+
+This module provides utilities for extracting data from:
+URL: https://jsonplaceholder.typicode.com
+
+lib used: - sys
+          - reqeusts
+          - rich
+        
+Author: Aimable
+Date: October 2024
 """
 import sys
 import requests
@@ -11,8 +21,7 @@ def get_data(id):
     try:
         """The first attempt to get name of the provided userid"""
         url1 = "https://jsonplaceholder.typicode.com/users"
-        params = {
-        "id": id
+        params = {        "id": id
         }
         response = requests.get(url1, params=params)
         user_data = response.json()
