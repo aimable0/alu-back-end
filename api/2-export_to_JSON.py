@@ -1,18 +1,5 @@
 #!/usr/bin/python3
-"""
-2-export_to_JSON.py
 
-This module extracts data from:
-URL: https://jsonplaceholder.typicode.com
-
-Libraries used:
-            - sys
-            - reqeusts
-            - and more
-
-Author: Aimable
-Date: October 2024
-"""
 import json
 import requests
 import sys
