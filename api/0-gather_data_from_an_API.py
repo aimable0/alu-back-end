@@ -49,7 +49,7 @@ def get_data(id):
             if item["completed"] is True:
                 NUMBER_OF_DONE_TASKS += 1
         print(
-            f"Employee {EMPLOYEE_NAME} is done with tasks "
+            f"Employee {EMPLOYEE_NAME} is done with tasks"
             f"({NUMBER_OF_DONE_TASKS}/{TOTAL_NUMBER_OF_TASKS}):"
         )
         for item in todos:
