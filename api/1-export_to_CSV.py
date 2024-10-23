@@ -13,7 +13,6 @@ Libraries used:
 Author: Aimable
 Date: October 2024
 """
-from pathlib import Path
 import requests
 import sys
 
@@ -43,8 +42,7 @@ def get_data(id):
         response = requests.get(url2, params=params_1)
         todos = response.json()
 
-        path = Path(__file__).parent / f"{USER_ID}.csv"
-        with path.open("w") as file:
+        with open(f"{USER_ID}.csv", "w") as file:
             for item in todos:
                 USER_ID = item["userId"]
                 TASK_COMPLETED_STATUS = item["completed"]
