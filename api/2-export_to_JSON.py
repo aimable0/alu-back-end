@@ -18,9 +18,9 @@ import requests
 import sys
 
 
-def get_data(id):
+def export_data(id):
     """
-    This function fetches and displays data to the stdout  from an API endpoint
+    This function fetches and exports in json file from an API endpoint
 
     Args:
         id (str): the id that identifies the user whose data we are retrieving
@@ -33,7 +33,6 @@ def get_data(id):
         No return.
     """
     try:
-
         url1 = "https://jsonplaceholder.typicode.com/users"
         params = {"id": id}
         response = requests.get(url1, params=params)
@@ -71,7 +70,7 @@ def main():
     """
     if len(sys.argv) > 1:
         id = sys.argv[1]
-        get_data(id)
+        export_data(id)
     else:
         print("Please provide an id")
         sys.exit(1)

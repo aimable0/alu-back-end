@@ -17,7 +17,7 @@ import requests
 import sys
 
 
-def get_data(id):
+def export_data(id):
     """
     This function fetches saves data in a csv format file from an APIendpoint
 
@@ -65,7 +65,7 @@ def main():
     """
     if len(sys.argv) > 1:
         id = sys.argv[1]
-        get_data(id)
+        export_data(id)
     else:
         print("Please provide an id")
         sys.exit(1)
