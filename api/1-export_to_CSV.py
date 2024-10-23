@@ -42,15 +42,14 @@ def export_data(id):
         response = requests.get(url2, params=params_1)
         todos = response.json()
 
-        with open(f"{USER_ID}.csv", "w", newline=" ") as file:
+        with open(f"{USER_ID}.csv", "w", newline="") as file:
             for item in todos:
                 USER_ID = item["userId"]
                 TASK_COMPLETED_STATUS = item["completed"]
                 TASK_TITLE = item["title"]
                 file.write(
-                    '"{}","{}","{}","{}"\n'.format(
-                        USER_ID, USERNAME, TASK_COMPLETED_STATUS, TASK_TITLE
-                    )
+                    f'"{USER_ID}","{USERNAME}",'
+                    f'"{TASK_COMPLETED_STATUS}","{TASK_TITLE}"\n'
                 )
 
     except requests.RequestException as error:
