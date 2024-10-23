@@ -8,14 +8,12 @@ URL: https://jsonplaceholder.typicode.com
 Libraries used: 
             - sys
             - reqeusts
-            - rich
         
 Author: Aimable
 Date: October 2024
 """
 import sys
 import requests
-from rich import print_json
 
 def get_data(id):
     """
