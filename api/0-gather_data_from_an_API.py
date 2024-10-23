@@ -36,22 +36,21 @@ def get_data(id):
         params = {"id": id}
         response = requests.get(url1, params=params)
         user_data = response.json()
-        employee_name = user_data[0]["name"]
+        EMPLOYEE_NAME = user_data[0]["name"]
 
         url2 = "https://jsonplaceholder.typicode.com/todos"
         params_1 = {"userId": id}
         response = requests.get(url2, params=params_1)
         todos = response.json()
 
-        total = len(todos)
-        trues = 0
+        TOTAL_NUMBER_OF_TASKS = len(todos)
+        NUMBER_OF_DONE_TASKS = 0
         for item in todos:
             if item["completed"] == True:
-                trues += 1
-
-        tasks = f"({trues}/{total})"
-
-        print(f"Employee {employee_name} is done with {tasks}:")
+                NUMBER_OF_DONE_TASKS += 1
+        print(
+            f"Employee {EMPLOYEE_NAME} is done with tasks({NUMBER_OF_DONE_TASKS}/{TOTAL_NUMBER_OF_TASKS}):"
+        )
         for item in todos:
             if item["completed"] == True:
                 print(f"\t {item['title']}")
