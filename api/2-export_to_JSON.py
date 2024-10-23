@@ -1,5 +1,18 @@
 #!/usr/bin/python3
+"""
+2-export_to_JSON.py
 
+This moodule exports data to JSON file from an APIendpoint:
+URL: https://jsonplaceholder.typicode.com
+
+Libraries used:
+            - sys
+            - reqeusts
+            - and more
+
+Author: Aimable
+Date: October 2024
+"""
 import json
 import requests
 import sys
