@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import sys
 import requests
 from rich import print_json
@@ -5,7 +7,7 @@ from rich import print_json
 def get_data(id):
 
     try:
-        # first resource location that contains the todo list
+        """The first attempt to get name of the provided userid"""
         url1 = "https://jsonplaceholder.typicode.com/users"
         params = {
         "id": id
@@ -14,7 +16,7 @@ def get_data(id):
         user_data = response.json()
         employee_name = user_data[0]["name"]
 
-        # second resource location that contains the username of the userid.
+        """second attempt to get the todo of a user with the specified id"""
         url2 = "https://jsonplaceholder.typicode.com/todos"
         params_1 = {
         "userId": id
@@ -41,6 +43,7 @@ def get_data(id):
         print("Request Failed, Be sure the provided id is with the range and try again")
 
 def main():
+    """check if an argument is passed at the command-line"""
     if len(sys.argv) > 1:
         id = sys.argv[1]
         get_data(id)
@@ -48,5 +51,6 @@ def main():
         print('Please provide an id') 
         sys.exit(1)  
 
+"""make sure the code doesn't work when imported"""
 if __name__ == "__main__":
     main()
